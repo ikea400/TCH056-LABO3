@@ -1,0 +1,109 @@
+body {
+  margin-right: 15%;
+  margin-left: 15%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 201, 60, 1) 0%,
+    rgba(255, 154, 60, 1) 38%,
+    rgba(255, 111, 60, 1) 62%,
+    rgba(21, 82, 99, 1) 100%
+  );
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(4, auto);
+  gap: 10px 10px;
+}
+
+.container-img {
+  max-height: 100%;
+  max-width: 100%;
+  transition: transform 2s;
+  border-radius: 10%;
+  border-style: solid;
+  border-color: wheat;
+}
+
+#container:hover > .container-img:not(:hover) {
+  transform: scale(0.1) rotateZ(1080deg);
+}
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.btn.btn-primary {
+  width: 100%;
+}
+
+.progress {
+  width: 100%;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+.progress-bar {
+  width: 50%;
+  animation-name: progress-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes button-animation {
+  0% {
+  }
+  50% {
+    transform: translate(8px, 0px) rotate(8deg);
+  }
+  100% {
+    transform: translate(-8px, 0px) rotate(-8deg);
+  }
+}
+
+a.btn.btn-primary:hover {
+  animation-name: button-animation;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
+
+@keyframes dropdown-animation {
+  0% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+.dropdown {
+  animation-name: dropdown-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
