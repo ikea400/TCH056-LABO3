@@ -107,3 +107,8 @@ a.btn.btn-primary:hover {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
+
+#basPage {
+  display: grid;
+  justify-content: center;
+}
