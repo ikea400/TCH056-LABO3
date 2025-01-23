@@ -1,0 +1,81 @@
+$numColumns: 3;
+$padding: 10px;
+$progressAnimationDuration: 4s;
+$buttonAnimationDuration: 0.2s;
+$progressBarWidth: 50%;
+$translateValue: 8px;
+$rotateValue: 8deg;
+$dropdownRotateValue: 30deg;
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat($numColumns, 1fr);
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  padding: $padding;
+}
+
+.btn.btn-primary {
+  width: 100%;
+}
+
+.progress {
+  width: 100%;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+.progress-bar {
+  width: $progressBarWidth;
+  animation-name: progress-animation;
+  animation-duration: $progressAnimationDuration;
+  animation-iteration-count: infinite;
+}
+
+@keyframes button-animation {
+  0% {
+  }
+  50% {
+    transform: translate($translateValue, 0px) rotate($rotateValue);
+  }
+  100% {
+    transform: translate(-$translateValue, 0px) rotate(-$rotateValue);
+  }
+}
+
+a.btn.btn-primary:hover {
+  animation-name: button-animation;
+  animation-duration: $buttonAnimationDuration;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
+
+@keyframes dropdown-animation {
+  0% {
+    transform: rotate(-$dropdownRotateValue);
+  }
+  50% {
+    transform: rotate($dropdownRotateValue);
+  }
+  100% {
+    transform: rotate(-$dropdownRotateValue);
+  }
+}
+
+.dropdown {
+  animation-name: dropdown-animation;
+  animation-duration: $progressAnimationDuration;
+  animation-iteration-count: infinite;
+}

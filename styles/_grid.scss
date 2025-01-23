@@ -1,0 +1,27 @@
+$numColumn: 4;
+$gap: 10px;
+$itemBorderRadius: 10%;
+$borderColor: wheat;
+$transitionDuration: 2s;
+$transformScale: 0.1;
+$transformRotation: 1080deg;
+
+#container {
+  display: grid;
+  grid-template-columns: repeat($numColumn, auto);
+  grid-template-rows: repeat($numColumn, auto);
+  gap: $gap $gap;
+}
+
+.container-img {
+  max-height: 100%;
+  max-width: 100%;
+  transition: transform $transitionDuration;
+  border-radius: $itemBorderRadius;
+  border-style: solid;
+  border-color: $borderColor;
+}
+
+#container:hover > .container-img:not(:hover) {
+  transform: scale($transformScale) rotateZ($transformRotation);
+}

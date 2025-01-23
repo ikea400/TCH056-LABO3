@@ -1,0 +1,26 @@
+@use './styles/header';
+@use './styles/grid';
+@use './styles/box';
+@use './styles/footer';
+
+$margin: 15%;
+$gradientColor1: rgba(255, 201, 60, 1);
+$gradientColor2: rgba(255, 154, 60, 1);
+$gradientColor3: rgba(255, 111, 60, 1);
+$gradientColor4: rgba(21, 82, 99, 1);
+$gradientStop1: 0%;
+$gradientStop2: 38%;
+$gradientStop3: 62%;
+$gradientStop4: 100%;
+
+body {
+  margin-right: $margin;
+  margin-left: $margin;
+  background: radial-gradient(
+    circle,
+    $gradientColor1 $gradientStop1,
+    $gradientColor2 $gradientStop2,
+    $gradientColor3 $gradientStop3,
+    $gradientColor4 $gradientStop4
+  );
+}
